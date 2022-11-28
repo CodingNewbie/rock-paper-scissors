@@ -4,78 +4,14 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="javascript.js"></script>
+    <script src="script.js" defer></script>
     <title>Rock Paper Scissors</title>
 </head>
 <body>
-    <script>
-        game();
-
-        function getComputerChoice() {
-            const compChoices = ['rock', 'paper', 'scissors']
-            let choiceToUse = compChoices[Math.floor(Math.random() * compChoices.length)];
-            return choiceToUse;
-        }
-
-        function makeLowerCase(playerSelection) {
-            let selectionLower = playerSelection.toLowerCase();
-            return selectionLower;
-        }
-
-        function playRound(playerSelection, computerSelection) {
-            let result;
-
-            if (playerSelection === "rock") {
-                switch (computerSelection) {
-                case "rock":
-                    result = "Even! Try Again!";
-                    break;
-                case "paper":
-                    result = "You lose! Paper beats Rock!";
-                    break;
-                case "scissors":
-                    result = "You win! Scissors beats Rock!";
-                    break;
-                }
-            } 
-            else if (playerSelection === "paper") {
-                switch (computerSelection) {
-                case "rock":
-                    result = "You win! Paper beats Rock!";
-                    break;
-                case "paper":
-                    result = "Even! Try Again!";
-                    break;
-                case "scissors":
-                    result = "You lose! Scissors beats Paper!";
-                    break;
-                }
-            } 
-            else {
-                // Player chose scissors
-                switch (computerSelection) {
-                case "rock":
-                    result = "You lose! Rock beats Scissors!";
-                    break;
-                case "paper":
-                    result = "You win! Scissors beats Paper!";
-                    break;
-                case "scissors":
-                    result = "Even! Try Again!";
-                    break;
-                }
-            }
-            return result;
-        }
-
-        function game() {
-            for(let i = 0; i < 5; i++) {
-                let playerSelection = prompt("Enter rock, paper, or scissors:");
-                playerSelection = makeLowerCase(playerSelection);
-                let computerSelection = getComputerChoice();
-                console.log(playRound(playerSelection, computerSelection));
-            }
-        }
-    </script>
+    <div id="container">
+        <button id="rock">Rock</button>
+        <button id="paper">Paper</button>
+        <button id="scissors">Scissors</button>
+    </div>
 </body>
 </html>
